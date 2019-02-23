@@ -6,7 +6,7 @@ import { AppComponent } from "./app.component";
 import { RantListComponent } from './components/rant-list/rant-list.component';
 import { RantDetailsComponent } from './components/rant-details/rant-details.component';
 import { HeaderComponent } from './components/header/header.component';
-import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SpinnerComponent } from "./components/spinner/spinner.component";
 
 
 const appRoutes: Routes = [
@@ -21,16 +21,19 @@ const appRoutes: Routes = [
  {
    path: 'rant-details/:rantId',
    component: RantDetailsComponent
- }
+ },
+ 
 ];
 
 @NgModule({
-  declarations: [AppComponent, RantListComponent, RantDetailsComponent, HeaderComponent, SpinnerComponent],
+  declarations: [AppComponent, RantListComponent, RantDetailsComponent, HeaderComponent,SpinnerComponent],
   imports: [BrowserModule,
             RouterModule.forRoot(appRoutes)
            ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [HeaderComponent,
+            SpinnerComponent]
 })
 
 
