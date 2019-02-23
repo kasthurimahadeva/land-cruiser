@@ -17,13 +17,10 @@ const appRoutes: Routes = [
    pathMatch: 'full'
  },
  {
-   path: 'rant-details',
+   path: 'rant-details/:rantId',
    component: RantDetailsComponent
  }
 ];
-
-
-
 
 @NgModule({
   declarations: [AppComponent, RantListComponent, RantDetailsComponent],
