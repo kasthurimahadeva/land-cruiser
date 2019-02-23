@@ -1,6 +1,12 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
+
+//service imports
+import { ConstantServiceService } from './services/constant-service.service';
 
 import { AppComponent } from "./app.component";
 import { RantListComponent } from './components/rant-list/rant-list.component';
@@ -43,7 +49,7 @@ const appRoutes: Routes = [
             RouterModule.forRoot(appRoutes)
            ],
 
-  providers: [],
+  providers: [ConstantServiceService],
 
 
   bootstrap: [AppComponent],
