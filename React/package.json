@@ -1,16 +1,20 @@
 {
   "name": "new",
   "version": "1.0.0",
+  "homepage": "https://kasthurimahadeva.github.io/React",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "16.8.0",
     "react-dom": "16.8.0",
-    "react-scripts": "2.0.3"
+    "react-scripts": "^2.1.5"
   },
   "devDependencies": {},
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
