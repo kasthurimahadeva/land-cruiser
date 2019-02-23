@@ -56,7 +56,8 @@ const appRoutes: Routes = [
 
 
   exports: [HeaderComponent,
-            SpinnerComponent]
+            SpinnerComponent,
+            LoginComponent]
 })
 
 

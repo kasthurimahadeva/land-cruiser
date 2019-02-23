@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  isOpened = false;
+  @Input()
+  set isOpen(isOpen: boolean) {
+    this.isOpened = isOpen;
+  }
+  get isOpen() {
+    return this.isOpened;
+  }
+  @Output() isShowChange = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  closeLoginPopup(): void {
+    this.isOpen = false;
   }
 
 }
