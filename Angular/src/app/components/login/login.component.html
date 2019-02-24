@@ -20,8 +20,8 @@
                     <form name="login">
                         <div class="login">
 
-                            <input type="text" placeholder="USERNAME" />
-                            <input type="password" placeholder="PASSWORD" />
+                            <input type="text" placeholder="USERNAME" [formControl]="userNameFormControl" />
+                            <input type="password" placeholder="PASSWORD" [formControl]="passwordFormControl" />
 
                             <div class="loader">
                                 <div class="spinner"></div>

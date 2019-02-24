@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 
 //service imports
 import { ConstantServiceService } from './services/constant-service.service';
