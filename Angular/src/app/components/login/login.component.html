@@ -23,7 +23,7 @@
                         <form name="login">
                             <div class="login">
 
-                                <input type="text" placeholder="USERNAME" autofocus required/>
+                                <input type="text" placeholder="USERNAME" autofocus onkeypress="moveOnTab(this, event);" required/>
                                 <input type="password" placeholder="PASSWORD" required />
 
                                 <!--<div class="loader">-->
@@ -34,7 +34,7 @@
                                     Some fields are missing !
                                 </div>
 
-                                <input type="submit" value="LET ME IN" />
+                                <input type="submit" onkeypress="submitOnEnter(this, event);" value="LET ME IN" />
                             </div>
                         </form>
                     </div>

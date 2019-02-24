@@ -26,4 +26,16 @@ export class LoginComponent implements OnInit {
     this.isOpen = false;
   }
 
+  submitOnEnter(inputElement, event) {
+    if (event.keyCode == 13) { // No need to do browser specific checks. It is always 13.
+      inputElement.form.submit();
+    }
+  }
+
+  moveOnTab(inputElement, event) {
+    if (event.keyCode == 9) { // No need to do browser specific checks. It is always 13.
+      inputElement.next('input').focus();
+    }
+  }
+
 }
