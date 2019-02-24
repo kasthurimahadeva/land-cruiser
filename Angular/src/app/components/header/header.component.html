@@ -14,13 +14,13 @@
                       <circle cx="18" cy="18" r="18" fill="#5c5f6f"></circle>
                   </svg>
               </div>
-              <div class="profile__name">Elon</div>
+              <div class="profile__name">{{userName}}</div>
           </div>
 
           <div class="join">
-               <button (click)="openLoginPopup()">Join</button>
+               <button (click)="openLoginPopup()" *ngIf="!isLoggedIn">Join</button>
               <app-login [(isOpen)]="isOpen"></app-login>
-              <!--<span>Sign Out</span>-->
+              <span *ngIf="isLoggedIn">Sign Out</span>
           </div>
       </div>
   </section>

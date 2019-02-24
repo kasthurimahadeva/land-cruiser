@@ -1,4 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ConstantServiceService} from "../../services/constant-service.service";
+import {FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -6,7 +9,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+    loginForm: FormGroup;
   isOpened = false;
   @Input()
   set isOpen(isOpen: boolean) {
@@ -17,7 +20,9 @@ export class LoginComponent implements OnInit {
   }
   @Output() isShowChange = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private service: ConstantServiceService,
+              private router: Router,
+  ) { }
 
   ngOnInit() {
   }
@@ -38,5 +43,18 @@ export class LoginComponent implements OnInit {
       inputElement.next('input').focus();
     }
   }
+
+    login() {
+        this.service
+            .authenticate({
+                    username: this.loginForm.controls['username'].value,
+                    password: this.loginForm.controls['password'].value
+                }
+                , () => {
+                    console.log('logged in successfully');
+                    this.router.navigate(['rant-list']);
+                });
+        return false;
+    }
 
 }

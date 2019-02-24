@@ -20,11 +20,11 @@
                         <div class="form__description">
                             Vote and comment on others' rants. Post your own.
                         </div>
-                        <form name="login">
+                        <form name="login" [formGroup]="loginForm">
                             <div class="login">
 
-                                <input type="text" placeholder="USERNAME" autofocus onkeypress="moveOnTab(this, event);" required/>
-                                <input type="password" placeholder="PASSWORD" required />
+                                <input type="text" placeholder="USERNAME" formControlName="username" autofocus onkeypress="moveOnTab(this, event);" required/>
+                                <input type="password" placeholder="PASSWORD" formControlName="password" required />
 
                                 <!--<div class="loader">-->
                                     <!--<div class="spinner"></div>-->
@@ -34,7 +34,7 @@
                                     Some fields are missing !
                                 </div>
 
-                                <input type="submit" onkeypress="submitOnEnter(this, event);" value="LET ME IN" />
+                                <input type="submit" (click)="login()" onkeypress="submitOnEnter(this, event);" value="LET ME IN" />
                             </div>
                         </form>
                     </div>

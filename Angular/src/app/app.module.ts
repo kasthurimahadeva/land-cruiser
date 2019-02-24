@@ -14,6 +14,7 @@ import { RantDetailsComponent } from './components/rant-details/rant-details.com
 import { HeaderComponent } from './components/header/header.component';
 import { SpinnerComponent } from "./components/spinner/spinner.component";
 import { LoginComponent } from './components/login/login.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 const appRoutes: Routes = [
@@ -46,7 +47,9 @@ const appRoutes: Routes = [
 
 
   imports: [BrowserModule,
-            RouterModule.forRoot(appRoutes)
+      HttpClientModule,
+            RouterModule.forRoot(appRoutes),
+      ReactiveFormsModule
            ],
 
   providers: [ConstantServiceService],
